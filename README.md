@@ -10,5 +10,5 @@ Chao Zhang, Nathalie Saurat, Daniela Cornacchia, Sun Young Chung, Trisha Sikder,
 ### Folder Structure
 |- Figures/ (Code for generating the figures in the manuscript)   
 |- Data/  
-|--- L1000 ()  
-|--- RawCounts ()   
+&nbsp;&nbsp;&nbsp;&nbsp;|--- L1000 ()  
+&nbsp;&nbsp;&nbsp;&nbsp;|--- RawCounts ()   
