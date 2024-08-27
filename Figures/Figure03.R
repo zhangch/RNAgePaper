@@ -2,17 +2,12 @@
 require(DESeq2)
 library(ggplot2)
 
-tpm <- function(counts, lengths) {
-  rate <- counts / lengths
-  rate / sum(rate) * 1e6
-}
-
 par(cex.lab=1.5, cex.axis=1.2, cex=1.5)
 #############################################
 ## Fibroblast - Figure3B
 #############################################
-count.matrix <- read.csv("../../1_Paper_Data/RawCount/13814_B_Gencode_count.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
-sample.table <- read.csv("../../1_Paper_Data//RawCount/13814_B_Metadata.csv", header=T, stringsAsFactors=FALSE,row.names=1)
+count.matrix <- read.csv("../Data//RawCounts/13814_B_Gencode_count.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+sample.table <- read.csv("../Data//RawCounts/13814_B_Metadata.csv", header=T, stringsAsFactors=FALSE,row.names=1)
 sample.table <- sample.table[sample.table$Cell_line=="Neonatal_Fib",]
 count.matrix <- count.matrix[,match(rownames(sample.table), colnames(count.matrix))]
 count.matrix <- count.matrix[rowSums(count.matrix)>10*ncol(count.matrix),]
@@ -47,12 +42,11 @@ ggplot(data=dataset, aes(x=X, y=Y, color=Condition)) +
   ggtitle("Neonatal Fibroblast")
 dev.off()
 
-
 #############################################
-## neuron
+## Neuron - Figure3D
 #############################################
-count.matrix <- read.csv("../../1_Paper_Data/RawCount/13963_B_Gencode_count.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
-sample.table <- read.csv("../../1_Paper_Data//RawCount/13963_B_Metadata.csv", header=T, stringsAsFactors=FALSE,row.names=1)
+count.matrix <- read.csv("../Data//RawCounts/13963_B_Gencode_count.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+sample.table <- read.csv("../Data//RawCounts/13963_B_Metadata.csv", header=T, stringsAsFactors=FALSE,row.names=1)
 count.matrix <- count.matrix[,match(rownames(sample.table), colnames(count.matrix))]
 count.matrix <- count.matrix[rowSums(count.matrix)>10*ncol(count.matrix),]
 
@@ -90,7 +84,6 @@ pdf("Figure3D.pdf", width=3, height=3, useDingbats = FALSE)
     ylab(pcaDataAllneuron$labels$y) +
     ggtitle("Neuron")
 dev.off()
-
 
 
 #############################################
