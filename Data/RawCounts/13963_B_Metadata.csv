@@ -1,0 +1,13 @@
+Sample,Condition,Cell_line,Concentration,Replicate,Category,IGO_Name
+H9_DMSO_1,DMSO,NA,NA,1,Control,Sample_E369_H9-3_DMSO_IGO_13963_B_1
+H9_DMSO_2,DMSO,NA,NA,2,Control,Sample_E369_H9-5_DMSO_IGO_13963_B_5
+H9_DMSO_3,DMSO,NA,NA,3,Control,Sample_E369_H9-6_DMSO_IGO_13963_B_9
+H9_AGK2_1,AGK-2,NA,NA,1,Age-inducer,Sample_E369_H9-3_AGK2_IGO_13963_B_2
+H9_AGK2_2,AGK-2,NA,NA,2,Age-inducer,Sample_E369_H9-5_AGK2_IGO_13963_B_6
+H9_AGK2_3,AGK-2,NA,NA,3,Age-inducer,Sample_E369_H9-6_AKG2_IGO_13963_B_10
+H9_FLUD_1,Fludarabine,NA,NA,1,Age-inducer,Sample_E369_H9-3_FLUD_IGO_13963_B_4
+H9_FLUD_2,Fludarabine,NA,NA,2,Age-inducer,Sample_E369_H9-5_FLUD_IGO_13963_B_8
+H9_FLUD_3,Fludarabine,NA,NA,3,Age-inducer,Sample_E369_H9-6_FLUD_IGO_13963_B_12
+H9_VINO_1,Vinorelbine,NA,NA,1,Age-inducer,Sample_E369_H9-3_VINO_IGO_13963_B_3
+H9_VINO_2,Vinorelbine,NA,NA,2,Age-inducer,Sample_E369_H9-5_VINO_IGO_13963_B_7
+H9_VINO_3,Vinorelbine,NA,NA,3,Age-inducer,Sample_E369_H9-6_VINO_IGO_13963_B_11
