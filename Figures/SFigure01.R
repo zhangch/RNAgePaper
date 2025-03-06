@@ -1,6 +1,7 @@
 #####R version: 3.6.2#####
 library(ggplot2)
 library(vegan)
+library(reshape2)
 
 #############################################
 ## Fibroblast - Figure S1 B.1 & C.1
@@ -165,3 +166,26 @@ pdf("FigureS1BC_SN.pdf", width=4, height=4, useDingbats = FALSE)
     annotate(geom="text", x=2.4, y=-4.8, label="202 genes", color="#1E90FF", size=8)
 dev.off()
 
+#############################################
+## Figure S1 F & G
+#############################################
+scoreCard <- read.csv("../Data/RNAgeScore/FiugreS1_Score.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+perCard <- read.csv("../Data/RNAgeScore/FiugreS1_Percentage.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+
+dist<-as.data.frame(scoreCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df1 = melt(dist)
+dist<-as.data.frame(perCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df2 = melt(dist)
+df = cbind(df1, df2$value)
+colnames(df) <- c('Markers', 'Group', 'AgingScore', 'Percentage')
+
+pdf("FigureS1EF.pdf", width = 6, height = 5, useDingbats = FALSE)
+  ggplot(df, aes(Markers, Group)) +
+    geom_point(aes(size=Percentage, fill=AgingScore), colour="Grey", stroke = 1, shape=21) +
+    scale_size(range = c(0, 10)) +
+    theme_bw() + scale_y_discrete(limits=rev(colnames(scoreCard))) + scale_x_discrete(limits=rownames(scoreCard)) +
+    theme(panel.grid.major = element_blank(), panel.border = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1))+
+    scale_fill_gradient2(low="#00B0F0", high="#FF0000", mid="white")
+dev.off()
