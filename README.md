@@ -4,7 +4,7 @@ This repository is used to store code for RNAge score calculation and related fi
 
 ### Citing our paper:
 ---------
-Chao Zhang, Nathalie Saurat, Daniela Cornacchia, Sun Young Chung, Trisha Sikder, Andrew Minotti, Lorenz Studer, Doron Betel. "Identifying age-modulating compounds using a novel computational framework for evaluating transcriptional age" *Under review* (2024).
+Chao Zhang, Nathalie Saurat, Daniela Cornacchia, Sun Young Chung, Trisha Sikder, Andrew Minotti, Lorenz Studer, Doron Betel. "Identifying age-modulating compounds using a novel computational framework for evaluating transcriptional age" *Aging Cell* (2025).
 
 ---------  
 ### Folder Structure
