@@ -1,0 +1,17 @@
+"","Young vs Old
+(Total pF)","Young vs Old
+(PolyA pF)","Young vs Old
+(Gage pF)","Young vs Old
+(Total FC)","Young vs Old
+(Gage FC)","Young vs Old
+(Total SN)","Young vs Old
+(Stomach, GTEx)","Young vs Old
+(Hippocampus, GTEx)","Young vs Old
+(SpinalCord, GTEx)","Young vs Old
+(Cerebellum, Hernandez et al. 2012)","Control vs GBM
+(Ainslie et al. 2024)"
+"Pan markers",99,99,89,100,96,99,63,78,66,85,82
+"pF markers",100,100,100,31,49,32,62,34,47,49,31
+"Neuronal markers",50,53,37,100,100,100,46,87,85,72,73
+"FC markers",54,40,39,100,100,15,37,92,82,74,72
+"SN markers",42,36,55,78,56,100,53,64,67,61,59
