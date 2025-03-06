@@ -8,7 +8,9 @@ Chao Zhang, Nathalie Saurat, Daniela Cornacchia, Sun Young Chung, Trisha Sikder,
 
 ---------  
 ### Folder Structure
+|-- Code/  (Code for processing the data)   
 |-- Data/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- AgingMarkers (Top 350 aging markers in each tissue type)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- DEG (Differential expression analysis results)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- L1000 (Applied RNAge score to L1000 data)   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- RNAgeScore (RNAgeScores used in figures)   
