@@ -73,3 +73,28 @@ pdf("FigureS2B.pdf", width=6, height=4, useDingbats = FALSE)
     annotate(geom="text", x=2.5, y=-4.8, label="23 genes", color="#DC143C", size=8) +
     annotate(geom="text", x=2.5, y=4.8, label="53 genes", color="#1E90FF", size=8)
 dev.off()
+
+#############################################
+## Figure S2D
+#############################################
+scoreCard <- read.csv("../Data/RNAgeScore/FiugreS2_3_Score.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+perCard <- read.csv("../Data/RNAgeScore/FiugreS2_3_Percentage.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+scoreCard <- scoreCard[,-3]
+perCard <- perCard[,-3]
+dist<-as.data.frame(scoreCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df1 = melt(dist)
+dist<-as.data.frame(perCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df2 = melt(dist)
+df = cbind(df1, df2$value)
+colnames(df) <- c('Markers', 'Group', 'AgingScore', 'Percentage')
+
+pdf("FigureS02C.pdf", width = 6, height = 2, useDingbats = FALSE)
+  ggplot(df, aes(Markers, Group)) +
+    geom_point(aes(size=Percentage, fill=AgingScore), colour="Grey", stroke = 1, shape=21) +
+    scale_size(range = c(0, 10)) +
+    theme_bw() + scale_y_discrete(limits=rev(colnames(scoreCard))) + scale_x_discrete(limits=rownames(scoreCard)) +
+    theme(panel.grid.major = element_blank(), panel.border = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1))+
+    scale_fill_gradient2(low="#00B0F0", high="#FF0000", mid="white")
+dev.off()
