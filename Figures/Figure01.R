@@ -1,8 +1,8 @@
 library(ggplot2)
 library(reshape2)
 
-scoreCard <- read.csv("Fiugre1_Score.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
-perCard <- read.csv("Fiugre1_Percentage.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+scoreCard <- read.csv("../Data/RNAgeScore/Fiugre1_Score.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+perCard <- read.csv("../Data/RNAgeScore/Fiugre1_Percentage.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
 
 dist<-as.data.frame(scoreCard)
 dist <- cbind(`id`=rownames(dist), dist)
