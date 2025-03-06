@@ -1,0 +1,19 @@
+"","Young vs Old
+(pF, Fleischer et al. 2018)","Young vs Old
+(FC, Hernandez et al. 2012)","Young vs Old
+(Mouse Brain, Tabula Muris)","Young vs Old
+(FC, GTEx)","Young vs Old
+(Cortex, GTEx)","Young vs Old
+(SN, GTEx)","iPSC-FIB vs pFIB
+(Old Donors)","iPSC-FIB vs pFIB
+(Young Donors)","Young vs Old
+(iPSC-FIB)","WT vs Progerin
+(Miller et al. 2013)","WT vs SATB1-KO
+(Riessland et al. 2019)","WT vs SLO
+(Fathi et al. 2022)","iPSCiN vs pFIB-iN
+(Mertens et al. 2021)"
+"Pan markers",69,92,81,83,93,84,93,63,33,56,69,70,66
+"pF markers",87,49,53,48,41,52,95,56,28,54,26,46,67
+"Neuronal markers",45,85,87,92,97,91,65,68,57,83,82,77,72
+"FC markers",41,93,89,100,100,89,65,72,54,93,57,84,65
+"SN markers",51,53,66,53,68,61,49,41,45,50,61,44,51
