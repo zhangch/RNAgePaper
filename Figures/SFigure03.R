@@ -60,3 +60,28 @@ result[,-1] %>%
   coord_flip()
 
 dev.off()
+
+#############################################
+## S. Fig 3C
+#############################################
+scoreCard <- read.csv("../Data/RNAgeScore/FiugreS2_3_Score.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+perCard <- read.csv("../Data/RNAgeScore/FiugreS2_3_Percentage.csv", header=T, stringsAsFactors=FALSE,row.names=1, check.names=FALSE)
+scoreCard <- scoreCard[,3]
+perCard <- perCard[,3]
+dist<-as.data.frame(scoreCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df1 = melt(dist)
+dist<-as.data.frame(perCard)
+dist <- cbind(`id`=rownames(dist), dist)
+df2 = melt(dist)
+df = cbind(df1, df2$value)
+colnames(df) <- c('Markers', 'Group', 'AgingScore', 'Percentage')
+
+pdf("FigureS03C.pdf", width = 6, height = 2, useDingbats = FALSE)
+  ggplot(df, aes(Markers, Group)) +
+    geom_point(aes(size=Percentage, fill=AgingScore), colour="Grey", stroke = 1, shape=21) +
+    scale_size(range=c(0,10),breaks=c(20,40,60,80,100), labels=c("20","40","60","80", "100"), guide="legend", limits = c(0, 100)) +
+    theme_bw() + scale_y_discrete(limits=rev(colnames(scoreCard))) + scale_x_discrete(limits=rownames(scoreCard)) +
+    theme(panel.grid.major = element_blank(), panel.border = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1))+
+    scale_fill_gradient2(low="#00B0F0", high="#FF0000", mid="white")
+dev.off()
